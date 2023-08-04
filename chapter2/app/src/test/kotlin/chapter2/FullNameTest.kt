@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 internal class FullNameTest {
-    
+
     @Test
     fun testEqualsFullName() {
         val firstName = Name("John")
@@ -15,20 +15,20 @@ internal class FullNameTest {
 
         assertEquals(fullName1, fullName2)
     }
-    
+
     @Test
     fun testThrowsExceptionWhenFirstNameIsEmpty() {
         val message = "FirstName must not be empty"
-        assertFailsWith<IllegalArgumentException>(message) { 
-            FullName(Name(""), Name("Doe")) 
+        assertFailsWith<IllegalArgumentException>(message) {
+            FullName(Name(""), Name("Doe"))
         }
     }
 
     @Test
     fun testThrowsExceptionWhenLastNameIsEmpty() {
         val message = "LastName must not be empty"
-        assertFailsWith<IllegalArgumentException>(message) { 
-            FullName(Name("John"), Name("")) 
+        assertFailsWith<IllegalArgumentException>(message) {
+            FullName(Name("John"), Name(""))
         }
     }
 }

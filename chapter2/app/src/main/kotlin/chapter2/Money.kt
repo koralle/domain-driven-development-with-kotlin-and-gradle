@@ -14,17 +14,17 @@ data class Money(private val amount: Int, private val currency: String) {
         require(amount >= 0) {
             "Amount must not be negative"
         }
-        
+
         require(currency.isNotEmpty()) {
             "Currency must not be empty"
         }
     }
-    
+
     operator fun plus(other: Money): Money {
         require(currency == other.currency) {
             "Currency must be same"
         }
-        
+
         return Money(amount + other.amount, currency)
     }
 
